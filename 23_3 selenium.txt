@@ -1,0 +1,44 @@
+23_3 selenium
+rIGHT cLICKING
+driver.get("https://demo.guru99.com/test/simple_context_menu.html");
+	            WebElement button=driver.findElement(By.xpath("//span[text()='right click me']"));
+	            Actions action = new Actions(driver);
+	            action.contextClick(button);------
+	            action.perform();
+--------------------------------------
+SCROLLING
+driver.get("https://www.naukri.com/mnjuser/homepage");
+	            Actions action = new Actions(driver);
+	            action.sendKeys(Keys.PAGE_DOWN);-----
+	            action.perform();
+-----------------------------------------
+MOVING MOUSE ONE TO ANOTHER
+driver.get("https://www.flipkart.com/");
+	            driver.findElement(By.cssSelector("button[class='_2KpZ6l _2doB4z']")).click();
+	           WebElement fashion= driver.findElement(By.xpath("//div[text()='Fashion']"));
+	            Actions action = new Actions(driver);
+	            action.moveToElement(fashion);------
+	            action.perform();
+O/P= FASHION IS OPEN
+--------------------------------------------
+ONE BOX TO ANOTHER
+ driver.get("https://www.actitime.com/");
+	           WebElement ele= driver.findElement(By.linkText("Pricing"));
+	            Actions action = new Actions(driver);
+	            action.moveToElement(ele, -80, 0).perform();-----
+PRACING TO CLIENT -SHIFT
+------------------------------------------------
+DRAG AND DROP - ONE PLACE TO ANOTHER
+driver.get("http://www.dhtmlgoodies.com/submitted-scripts/i-google-like-drag-drop/index.html");
+	            WebElement source = driver.findElement(By.xpath("//h1[text()='Block 2']"));
+	            WebElement target = driver.findElement(By.id("column-3"));
+	            Actions action = new Actions(driver);
+	            action.dragAndDrop(source, target);------
+	            action.perform();
+-------------------------------------------------------
+BY USING METHOD
+driver.get("http://www.dhtmlgoodies.com/submitted-scripts/i-google-like-drag-drop/index.html");
+	            WebElement source = driver.findElement(By.xpath("//h1[text()='Block 2']"));
+	            WebElement target = driver.findElement(By.id("column-3"));
+	            Actions action = new Actions(driver);
+	            action.clickAndHold(source).moveToElement(target).release();------
